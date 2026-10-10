@@ -26,11 +26,13 @@ via `wrangler deploy` (config in `wrangler.jsonc`, worker name
 - `/wiki/` index groups by category plus 5 most recent by `date`;
   `src/pages/llms.txt.js` auto-generates `/llms.txt` from all articles —
   no manual step when adding articles.
-- No per-article edit links or disclaimers (the CONTRIBUTING.md "edit link
-  is generated" line is stale — none exists). GitHub/contribution pointers
+- No per-article edit links or disclaimers. GitHub/contribution pointers
   live only in the footer, the `/wiki/` note, and Acerca; the unofficial /
   not-financial-advice banner lives in `Base.astro`. Don't duplicate them
   in articles.
+- Golden rule: universal theory is linked, not duplicated; original
+  articles must carry Argentine context + effective date + APA 7
+  `Referencias` (see CONTRIBUTING.md).
 - Bibliography books are hardcoded in `src/pages/bibliografia/index.astro`;
   `cover` is optional — drop the file into `public/libros/` (create the
   dir; local files only, no hotlinking) and reference it there.

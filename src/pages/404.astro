@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Página no encontrada"
+  description="Error 404: la página que buscás no existe o se movió."
+>
+  <section class="hero">
+    <img
+      src="/marca/faro-apagado.svg"
+      alt="Faro apagado"
+      width="180"
+      height="180"
+    />
+    <h1>404 — Este faro está apagado</h1>
+    <p>La página que buscás no existe o se movió a otro puerto.</p>
+    <ul class="button-grid">
+      <li><a class="button" href="/">Inicio</a></li>
+      <li>
+        <a class="button secondary" href="/wiki/">Wiki</a>
+      </li>
+    </ul>
+  </section>
+</Base>
