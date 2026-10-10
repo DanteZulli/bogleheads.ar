@@ -7,6 +7,8 @@ interface Book {
   // Optional cover image. Drop the file into public/libros/ and reference
   // it here, e.g. cover: "/libros/guia-boglehead-de-inversion.jpg".
   cover?: string;
+  // Optional link to a free ebook version.
+  ebookUrl?: string;
 }
 
 const books: Book[] = [
@@ -14,6 +16,12 @@ const books: Book[] = [
     title: "La guía Boglehead de inversión",
     author: "Mel Lindauer, Taylor Larimore y Michael LeBoeuf",
     cover: "/libros/la-guia-boglehead-de-inversion-deusto.jpg",
+  },
+  {
+    title: "La guía Bogleheads España",
+    author: "Bogleheads España",
+    cover: "/libros/guia-bogleheads-es.jpg",
+    ebookUrl: "https://bogleheads.es/guia",
   },
 ];
 ---
@@ -24,10 +32,6 @@ const books: Book[] = [
 >
   <h1>Bibliografía recomendada</h1>
   <p>Lecturas para profundizar en la filosofía y su evidencia.</p>
-  <p>
-    Solo incluyo fuentes que leí y avalo, priorizando lo útil en contexto
-    argentino.
-  </p>
 
   <ul class="book-grid">
     {
@@ -59,6 +63,11 @@ const books: Book[] = [
           <p class="book-author">
             <em>{book.author}</em>
           </p>
+          {book.ebookUrl && (
+            <p>
+              <a href={book.ebookUrl}>Leer ebook gratis</a>
+            </p>
+          )}
         </li>
       ))
     }

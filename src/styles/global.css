@@ -420,6 +420,23 @@ a {
     background: var(--surface);
 }
 
+.article-body blockquote {
+    margin: 1.5rem 0;
+    padding: 0.9rem 1.25rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--navy);
+}
+
+.article-body blockquote p {
+    margin: 0;
+}
+
+.article-body blockquote p + p {
+    margin-top: 0.6rem;
+}
+
 .toc {
     position: sticky;
     top: 1rem;
