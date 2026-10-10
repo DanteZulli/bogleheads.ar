@@ -3,39 +3,46 @@ import Base from "../layouts/Base.astro";
 ---
 
 <Base
-  title="Bogleheads® Argentina"
-  description="Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina: inversión pasiva, indexada y periódica."
-  exactTitle
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Bogleheads® Argentina",
-    url: "https://bogleheads.ar/",
-    description:
-      "Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina.",
-    inLanguage: "es-AR",
-  }}
+    title="Bogleheads® Argentina"
+    description="Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina: inversión pasiva, indexada y periódica."
+    exactTitle
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Bogleheads® Argentina",
+        url: "https://bogleheads.ar/",
+        description:
+            "Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina.",
+        inLanguage: "es-AR",
+    }}
 >
-  <section class="hero hero-compact">
-    <img
-      src="/favicon.svg"
-      alt="Faro Año Nuevo, logo de Bogleheads Argentina"
-      width="120"
-      height="120"
-    />
-    <h1>Bienvenidos a Bogleheads® Argentina 🇦🇷</h1>
-    <p>
-      <strong>
-        Comunidad de inversión sobre la filosofía Bogleheads®: inversión
-        pasiva, indexada y periódica, pensada desde Argentina.
-      </strong>
-    </p>
-    <p><em>Stay the course.</em></p>
-    <ul class="button-grid">
-      <li><a class="button" href="/wiki/">Wiki</a></li>
-      <li>
-        <a class="button secondary" href="/bibliografia/">Bibliografía</a>
-      </li>
-    </ul>
-  </section>
+    <section class="hero hero-compact">
+        <img
+            src="/favicon.svg"
+            alt="Faro Año Nuevo, logo de Bogleheads Argentina"
+            width="120"
+            height="120"
+        />
+        <h1>Bienvenidos a Bogleheads® Argentina 🇦🇷</h1>
+        <p>
+            Comunidad de inversión sobre la filosofía Bogleheads®:{" "}
+            <strong>inversión pasiva, indexada y periódica </strong>, pensada
+            desde Argentina.
+        </p>
+        <p>
+            <em>Stay the course.</em>
+        </p>
+        <ul class="button-grid">
+            <li>
+                <a class="button" href="/wiki/">
+                    Wiki
+                </a>
+            </li>
+            <li>
+                <a class="button secondary" href="/bibliografia/">
+                    Bibliografía
+                </a>
+            </li>
+        </ul>
+    </section>
 </Base>
