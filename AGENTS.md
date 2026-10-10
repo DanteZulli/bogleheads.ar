@@ -6,9 +6,10 @@ site for Argentina. Content: CC BY-SA 4.0. Code: MIT.
 ## Commands (just)
 
 ```bash
-just help   # list recipes
-just run    # astro dev (npm run dev)
-just build  # astro build -> dist/ (npm run build)
+just help     # list recipes
+just run      # astro dev (npm run dev)
+just build    # astro build -> dist/ (npm run build)
+just preview  # serve dist/ locally (astro preview)
 ```
 
 No tests, lint, typecheck, or CI exist — `just build` is the verification
