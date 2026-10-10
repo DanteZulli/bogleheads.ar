@@ -410,6 +410,16 @@ a {
     min-width: 0;
 }
 
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
 .toc {
     position: sticky;
     top: 1rem;

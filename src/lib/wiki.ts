@@ -23,7 +23,7 @@ export const CATEGORY_BLURB: Record<Category, string> = {
   Teoría:
     "Principios universales de la filosofía Bogleheads®: vivir por debajo de tus medios, diversificar, minimizar costos e impuestos y mantener el rumbo.",
   Argentina:
-    "Cómo aplicar la filosofía desde Argentina: moneda, inflación, instrumentos disponibles y fiscalidad local.",
+    "Cómo aplicar la filosofía desde Argentina: moneda, inflación, instrumentos disponibles y fiscalidad local. Todo lo publicado acá trata exclusivamente de Argentina y no es trasladable a otros contextos.",
   Estudios: "Evidencia y datos sobre gestión pasiva frente a gestión activa.",
   Recursos:
     "Libros, guías originales y material de referencia para seguir aprendiendo.",
