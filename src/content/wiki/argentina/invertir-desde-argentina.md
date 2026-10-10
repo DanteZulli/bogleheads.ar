@@ -6,38 +6,23 @@ authors: ["Dante Zulli"]
 date: 2026-10-10
 ---
 
-*Artículo inicial. La idea es que la comunidad lo amplíe con experiencia
-local: brokers, impuestos y estrategias concretas.*
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
 
-Aplicar la filosofía Bogleheads® desde Argentina suma desafíos que no existen
-en EE.UU. o España:
+## Lorem ipsum
 
-## Moneda e inflación
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-- El peso pierde valor frente a la inflación de forma persistente. Los
-  objetivos conviene pensarlos en **términos reales** o en moneda dura.
-- El interés compuesto solo construye patrimonio si la rentabilidad supera a
-  la inflación.
+### Dolor sit amet
 
-## Instrumentos disponibles
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 
-- **Cedears:** permiten comprar fracciones de acciones y ETFs extranjeros
-  desde el mercado local, en pesos.
-- **Fondos comunes de inversión:** oferta local limitada en cuanto a fondos
-  indexados de bajo costo; vale la pena comparar comisiones.
-- **ETFs en el exterior:** acceso a diversificación global a través de
-  brokers que operan con cuentas en el exterior.
-- **Dólar MEP / CCL:** vías legales para dolarizar el ahorro dentro del
-  mercado de capitales.
+## Referencias
 
-## Fiscalidad
-
-El tratamiento impositivo (bienes personales, impuesto a las ganancias,
-retenciones) cambia con frecuencia en Argentina. Antes de operar, conviene
-revisar la normativa vigente o consultar a un contador.
-
-## Cómo colaborar
-
-Si tenés experiencia local (comparativas de brokers, guías paso a paso,
-impuestos), este artículo y la sección Argentina te esperan: proponé cambios
-desde [GitHub](https://github.com/DanteZulli/bogleheads.ar).
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
