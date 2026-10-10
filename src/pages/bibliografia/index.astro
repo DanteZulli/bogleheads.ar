@@ -4,7 +4,6 @@ import Base from "../../layouts/Base.astro";
 interface Book {
   title: string;
   author: string;
-  note: string;
   // Optional cover image. Drop the file into public/libros/ and reference
   // it here, e.g. cover: "/libros/guia-boglehead-de-inversion.jpg".
   cover?: string;
@@ -14,23 +13,7 @@ const books: Book[] = [
   {
     title: "La guía Boglehead de inversión",
     author: "Mel Lindauer, Taylor Larimore y Michael LeBoeuf",
-    note: "La guía de la comunidad en español (Deusto, colección Value School, prólogo de John C. Bogle): ahorro, asignación de activos y mantener el rumbo.",
     cover: "/libros/la-guia-boglehead-de-inversion-deusto.jpg",
-  },
-  {
-    title: "The Little Book of Common Sense Investing",
-    author: "John C. Bogle",
-    note: "El libro fundacional: por qué los fondos indexados de bajo costo superan a la gestión activa.",
-  },
-  {
-    title: "A Random Walk Down Wall Street",
-    author: "Burton Malkiel",
-    note: "La evidencia contra el stock picking y el market timing, en lenguaje accesible.",
-  },
-  {
-    title: "The Psychology of Money",
-    author: "Morgan Housel",
-    note: "Comportamiento y dinero: hacer pocas cosas bien durante mucho tiempo.",
   },
 ];
 ---
@@ -76,7 +59,6 @@ const books: Book[] = [
           <p class="book-author">
             <em>{book.author}</em>
           </p>
-          <p>{book.note}</p>
         </li>
       ))
     }
