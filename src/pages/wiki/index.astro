@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const articles = await getCollection("wiki");
+
+const CATEGORIES = ["Teoría", "Argentina", "Estudios", "Recursos", "Otro"] as const;
+
+const slugOf = (id: string) => id.replace(/\.md$/, "");
+
+const byCategory = CATEGORIES.map((category) => ({
+  category,
+  items: articles
+    .filter((entry) => entry.data.category === category)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title, "es")),
+})).filter((group) => group.items.length > 0);
+
+const recent = [...articles]
+  .sort(
+    (a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0),
+  )
+  .slice(0, 5);
+---
+
+<Base
+  title="Wiki"
+  description="Wiki de inversión pasiva desde Argentina: teoría Bogleheads, contexto local, estudios y recursos."
+  editUrl="https://github.com/DanteZulli/bogleheads.ar/tree/main/src/content/wiki"
+>
+  <h1>Wiki</h1>
+  <p class="wiki-search-note">
+    Artículos educativos sobre inversión pasiva, indexada y periódica, con
+    contexto argentino. Para agregar o corregir un artículo, usá el enlace
+    "Editar esta página" al pie de cada uno.
+  </p>
+
+  {
+    byCategory.map((group) => (
+      <section class="wiki-category">
+        <h2>{group.category}</h2>
+        <ul class="article-list">
+          {group.items.map((entry) => (
+            <li>
+              <a href={`/wiki/${slugOf(entry.id)}/`}>{entry.data.title}</a>
+              {entry.data.description && <p>{entry.data.description}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  {
+    recent.length > 0 && (
+      <section class="wiki-category">
+        <h2>Artículos recientes</h2>
+        <ul class="article-list">
+          {recent.map((entry) => (
+            <li>
+              <a href={`/wiki/${slugOf(entry.id)}/`}>{entry.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>

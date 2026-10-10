@@ -1,0 +1,410 @@
+/* Classic, light, bogleheads.es-inspired theme. */
+
+:root {
+    --bg: #fdfdf9;
+    --surface: #ffffff;
+    --ink: #24303c;
+    --muted: #5d6b7a;
+    --navy: #1a3a5c;
+    --accent: #2e7d5b;
+    --accent-soft: #e6f2ec;
+    --link: #1f5fa8;
+    --border: #e2e6ea;
+    --banner-bg: #fff8e6;
+    --banner-border: #e8cf7a;
+    --max-width: 60rem;
+    --radius: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.075rem;
+    line-height: 1.7;
+}
+
+body,
+.site-nav,
+.button,
+input,
+select,
+button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+article,
+.prose {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Header */
+
+.site-header {
+    background: var(--navy);
+    color: #fff;
+}
+
+.site-header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.25rem 1rem 0;
+    text-align: center;
+}
+
+.site-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.site-tagline {
+    margin: 0.15rem 0 1rem;
+    color: #c8d6e5;
+    font-size: 0.95rem;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    padding-bottom: 0.9rem;
+}
+
+.site-nav a {
+    color: #dce7f3;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+}
+
+.site-nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.site-nav a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Unofficial banner */
+
+.unofficial-banner {
+    background: var(--banner-bg);
+    border-bottom: 1px solid var(--banner-border);
+    color: #6b5410;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.45rem 1rem;
+}
+
+.unofficial-banner a {
+    color: inherit;
+}
+
+/* Layout */
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--navy);
+    line-height: 1.3;
+}
+
+a {
+    color: var(--link);
+}
+
+/* Hero (home) */
+
+.hero {
+    text-align: center;
+    padding: 1.5rem 0 2rem;
+}
+
+.hero img {
+    max-width: 220px;
+    height: auto;
+}
+
+.hero h1 {
+    font-size: 2.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 36rem;
+    margin: 0 auto 1.5rem;
+}
+
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.button {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.button:hover {
+    background: #25507c;
+    color: #fff;
+}
+
+.button.secondary {
+    background: var(--accent);
+}
+
+.button.secondary:hover {
+    background: #35906a;
+}
+
+/* Cards */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card a:hover h3 {
+    text-decoration: underline;
+}
+
+/* Wiki index */
+
+.wiki-search-note {
+    color: var(--muted);
+}
+
+.wiki-category {
+    margin-top: 2rem;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.article-list a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.article-list a:hover {
+    text-decoration: underline;
+}
+
+.article-list p {
+    margin: 0.15rem 0 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+}
+
+/* Article */
+
+.article-meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.edit-link {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+.disclaimer-box {
+    background: var(--banner-bg);
+    border: 1px solid var(--banner-border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.92rem;
+    color: #6b5410;
+}
+
+/* Calculator */
+
+.calculator {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.calculator-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.calculator label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.calculator input,
+.calculator select {
+    font-size: 1rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+.calculator-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.result-box {
+    background: var(--accent-soft);
+    border-radius: 0.35rem;
+    padding: 0.7rem 0.9rem;
+    text-align: center;
+}
+
+.result-box .value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.result-box .label {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.year-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 1rem;
+}
+
+.year-bar-row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr 8rem;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.year-bar-track {
+    background: #edf0f3;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    height: 1rem;
+    display: flex;
+}
+
+.year-bar-contrib {
+    background: #9fb8d1;
+    height: 100%;
+}
+
+.year-bar-interest {
+    background: var(--accent);
+    height: 100%;
+}
+
+.year-bar-row .amount {
+    text-align: right;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Search (Pagefind UI) */
+
+#search {
+    margin-top: 1rem;
+}
+
+/* Footer */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 1.75rem 1rem 2.5rem;
+}
+
+.site-footer p {
+    margin: 0.3rem 0;
+}

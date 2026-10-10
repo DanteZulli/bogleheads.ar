@@ -1,0 +1,33 @@
+---
+const current = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/wiki/", label: "Wiki" },
+  { href: "/bibliografia/", label: "Bibliografía" },
+  { href: "/buscar/", label: "Buscar" },
+  { href: "/acerca/", label: "Acerca" },
+];
+
+const isActive = (href: string) =>
+  href === "/" ? current === "/" : current.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/">Bogleheads® Argentina</a>
+    <p class="site-tagline">Inversión pasiva, indexada y periódica</p>
+    <nav class="site-nav" aria-label="Principal">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

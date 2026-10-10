@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const books = [
+  {
+    title: "The Little Book of Common Sense Investing",
+    author: "John C. Bogle",
+    note: "El libro fundacional: por qué los fondos indexados de bajo costo superan a la gestión activa.",
+  },
+  {
+    title: "The Bogleheads' Guide to Investing",
+    author: "Larimore, Lindauer y LeBoeuf",
+    note: "Guía práctica de la comunidad: ahorro, asignación de activos e impuestos (enfocado en EE.UU.).",
+  },
+  {
+    title: "A Random Walk Down Wall Street",
+    author: "Burton Malkiel",
+    note: "La evidencia contra el stock picking y el market timing, en lenguaje accesible.",
+  },
+  {
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    note: "Comportamiento y dinero: hacer pocas cosas bien durante mucho tiempo.",
+  },
+];
+---
+
+<Base
+  title="Bibliografía recomendada"
+  description="Libros recomendados sobre inversión pasiva y finanzas personales."
+  editUrl="https://github.com/DanteZulli/bogleheads.ar/edit/main/src/pages/bibliografia/index.astro"
+>
+  <h1>Bibliografía recomendada</h1>
+  <p>Lecturas para profundizar en la filosofía y su evidencia.</p>
+  <ul class="card-grid">
+    {
+      books.map((book) => (
+        <li class="card">
+          <h3>{book.title}</h3>
+          <p>
+            <em>{book.author}</em>
+          </p>
+          <p>{book.note}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
