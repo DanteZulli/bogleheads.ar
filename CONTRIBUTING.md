@@ -29,8 +29,8 @@ Contenido en Markdown...
 
 3. Available categories: `Teoría`, `Argentina`, `Estudios`, `Recursos`,
    `Otro`.
-4. The article appears automatically on `/wiki/` (grouped by category)
-   and the edit link is generated from its URL.
+4. The article appears automatically on `/wiki/` (grouped by category,
+   plus the 5 most recent by `date`).
 
 ## Style
 

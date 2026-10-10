@@ -6,6 +6,6 @@ help:
 run:
     npm run dev
 
-# Build the static site into dist/ and index it with Pagefind.
+# Build the static site into dist/.
 build:
     npm run build
