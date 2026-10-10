@@ -17,8 +17,11 @@ step. Deploy: Cloudflare Workers Static Assets from `dist/`
 via `wrangler deploy` (config in `wrangler.jsonc`, worker name
 `bogleheads-ar`). No SSR adapter — output stays fully static.
 Note: `astro dev` serves Astro's own default 404 page, not
-`src/pages/404.astro` — the custom 404 only applies to built output
-(`dist/404.html`, served via `not_found_handling = "404-page"`).
+`src/pages/404.astro`. In `astro preview`, unknown routes serve
+`dist/404.html` only with trailing slash (`/noexiste/` works, `/noexiste`
+shows Astro's built-in notice) because `trailingSlash: 'always'`. In
+production, Workers serves `dist/404.html` for any miss via
+`not_found_handling = "404-page"`.
 
 ## Content
 
