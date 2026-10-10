@@ -1,56 +1,37 @@
 ---
 import Base from "../../layouts/Base.astro";
 
-const BOOK_CATEGORIES = [
-  "Fundacionales",
-  "Guías prácticas",
-  "Evidencia y mercados",
-  "Conducta",
-] as const;
-
-type BookCategory = (typeof BOOK_CATEGORIES)[number];
-
 interface Book {
   title: string;
   author: string;
   note: string;
-  category: BookCategory;
   // Optional cover image. Drop the file into public/libros/ and reference
-  // it here, e.g. cover: "/libros/bogle-little-book.jpg".
+  // it here, e.g. cover: "/libros/guia-boglehead-de-inversion.jpg".
   cover?: string;
 }
 
 const books: Book[] = [
   {
+    title: "La guía Boglehead de inversión",
+    author: "Mel Lindauer, Taylor Larimore y Michael LeBoeuf",
+    note: "La guía de la comunidad en español (Deusto, colección Value School, prólogo de John C. Bogle): ahorro, asignación de activos y mantener el rumbo.",
+  },
+  {
     title: "The Little Book of Common Sense Investing",
     author: "John C. Bogle",
     note: "El libro fundacional: por qué los fondos indexados de bajo costo superan a la gestión activa.",
-    category: "Fundacionales",
-  },
-  {
-    title: "The Bogleheads' Guide to Investing",
-    author: "Larimore, Lindauer y LeBoeuf",
-    note: "Guía práctica de la comunidad: ahorro, asignación de activos e impuestos (enfocado en EE.UU.).",
-    category: "Guías prácticas",
   },
   {
     title: "A Random Walk Down Wall Street",
     author: "Burton Malkiel",
     note: "La evidencia contra el stock picking y el market timing, en lenguaje accesible.",
-    category: "Evidencia y mercados",
   },
   {
     title: "The Psychology of Money",
     author: "Morgan Housel",
     note: "Comportamiento y dinero: hacer pocas cosas bien durante mucho tiempo.",
-    category: "Conducta",
   },
 ];
-
-const byCategory = BOOK_CATEGORIES.map((category) => ({
-  category,
-  items: books.filter((book) => book.category === category),
-})).filter((group) => group.items.length > 0);
 ---
 
 <Base
@@ -64,44 +45,39 @@ const byCategory = BOOK_CATEGORIES.map((category) => ({
     argentino.
   </p>
 
-  {
-    byCategory.map((group) => (
-      <section class="books-category" aria-label={group.category}>
-        <h2>{group.category}</h2>
-        <ul class="book-grid">
-          {group.items.map((book) => (
-            <li class="book-card">
-              {book.cover ? (
-                <img
-                  class="book-cover"
-                  src={book.cover}
-                  alt={`Portada de ${book.title}`}
-                  loading="lazy"
-                />
-              ) : (
-                <div class="book-cover-placeholder" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" />
-                    <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
-                  </svg>
-                </div>
-              )}
-              <h3>{book.title}</h3>
-              <p class="book-author">
-                <em>{book.author}</em>
-              </p>
-              <p>{book.note}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))
-  }
+  <ul class="book-grid">
+    {
+      books.map((book) => (
+        <li class="book-card">
+          {book.cover ? (
+            <img
+              class="book-cover"
+              src={book.cover}
+              alt={`Portada de ${book.title}`}
+              loading="lazy"
+            />
+          ) : (
+            <div class="book-cover-placeholder" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" />
+                <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
+              </svg>
+            </div>
+          )}
+          <h3>{book.title}</h3>
+          <p class="book-author">
+            <em>{book.author}</em>
+          </p>
+          <p>{book.note}</p>
+        </li>
+      ))
+    }
+  </ul>
 </Base>

@@ -497,16 +497,6 @@ a {
 
 /* Books */
 
-.books-category {
-    margin-top: 2rem;
-}
-
-.books-category h2 {
-    font-size: 1.3rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid var(--accent);
-}
-
 .book-grid {
     list-style: none;
     padding: 0;
