@@ -12,10 +12,12 @@ just build  # astro build -> dist/ (npm run build)
 ```
 
 No tests, lint, typecheck, or CI exist — `just build` is the verification
-step. (The justfile comment mentioning Pagefind is stale: no search
-indexing exists.) Deploy: Cloudflare Workers Static Assets from `dist/`
+step. Deploy: Cloudflare Workers Static Assets from `dist/`
 via `wrangler deploy` (config in `wrangler.jsonc`, worker name
 `bogleheads-ar`). No SSR adapter — output stays fully static.
+Note: `astro dev` serves Astro's own default 404 page, not
+`src/pages/404.astro` — the custom 404 only applies to built output
+(`dist/404.html`, served via `not_found_handling = "404-page"`).
 
 ## Content
 
