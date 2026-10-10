@@ -380,13 +380,28 @@ a {
 /* Footer */
 
 .flag-stripe {
-    height: 9px;
+    height: 12px;
     background: linear-gradient(
         to bottom,
-        var(--celeste) 0 3px,
-        #fff 3px 6px,
-        var(--celeste) 6px 9px
+        var(--celeste) 0 4px,
+        #fff 4px 8px,
+        var(--celeste) 8px 12px
     );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag-stripe span {
+    font-size: 9px;
+    letter-spacing: 6px;
+    padding-left: 6px;
+    line-height: 1;
+    color: var(--navy);
+}
+
+.cc-badge {
+    vertical-align: middle;
 }
 
 .site-footer {

@@ -60,12 +60,12 @@ production, Workers serves `dist/404.html` for any miss via
 ## Astro gotcha: whitespace around links
 
 Astro collapses newlines between text and tags, gluing words to links
-("desdeGitHub"). Always use explicit `{" "}` at text↔`<a>` boundaries
-across lines. After building, verify with:
+("desdeGitHub"). Always use explicit `{" "}` at text↔inline-tag boundaries
+across lines (`a`, `strong`, `em`). After building, verify with:
 
 ```bash
-grep -rhoE '.{16}<a [^>]*>' dist/ | grep -E '[A-Za-z0-9]<a ' || echo ok
-grep -rhoE '</a>.{16}' dist/ | grep -E '</a>[A-Za-z]' || echo ok
+grep -rhoE '.{16}<(a|strong|em|code)[ >][^>]*>' dist/ | grep -E '[A-Za-z0-9]<(a|strong|em)' || echo ok
+grep -rhoE '</(a|strong|em|code)>.{16}' dist/ | grep -E '</(a|strong|em)>[A-Za-z]' || echo ok
 ```
 
 ## Dates
