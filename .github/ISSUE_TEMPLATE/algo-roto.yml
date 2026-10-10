@@ -1,0 +1,30 @@
+---
+name: "Algo roto"
+description: "Reportar algo roto del sitio (no del contenido de los artículos)."
+title: "[roto] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: que-pasa
+    attributes:
+      label: "¿Qué está roto?"
+      description: "Contanos qué ves y dónde (página, sección, dispositivo)."
+      placeholder: "En /wiki/ las tarjetas se ven una debajo de la otra en mi celular…"
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: "¿Qué esperabas ver?"
+      description: "Cómo debería verse o comportarse."
+    validations:
+      required: false
+  - type: input
+    id: donde
+    attributes:
+      label: "¿Dónde lo viste?"
+      description: "URL de la página y navegador/dispositivo si aplica."
+      placeholder: "https://bogleheads.ar/wiki/ — Firefox en Android"
+    validations:
+      required: false
+---
