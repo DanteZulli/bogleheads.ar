@@ -60,8 +60,10 @@ production, Workers serves `dist/404.html` for any miss via
 ## Astro gotcha: whitespace around links
 
 Astro collapses newlines between text and tags, gluing words to links
-("desdeGitHub"). Fix it by keeping the space on the same line as the tag —
-never with `{" "}` patches. After building, verify with:
+("desdeGitHub"). Fix it by keeping the space on the same line as the tag.
+Note: Zed + Prettier (format-on-save) reflows long lines and re-inserts
+`{" "}` by itself to preserve spacing — that is fine and expected, the
+output stays correct. Don't fight it; verify output with:
 
 ```bash
 grep -rhoE '.{16}<(a|strong|em|code)[ >][^>]*>' dist/ | grep -E '[A-Za-z0-9]<(a|strong|em)' || echo ok
