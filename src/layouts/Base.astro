@@ -27,10 +27,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://bogleheads.
   <body>
     <SiteHeader />
     <div class="unofficial-banner">
-      Sitio no oficial, con fines educativos. Complementa a{" "}
-      <a href="https://bogleheads.org">bogleheads.org</a> y{" "}
-      <a href="https://bogleheads.es">bogleheads.es</a>. No es asesoramiento
-      financiero. <a href="/acerca/">Más info</a>.
+      Sitio no oficial, con fines educativos. No es asesoramiento financiero.{" "}
+      <a href="/acerca/">Más info</a>.
     </div>
     <main>
       <slot />
