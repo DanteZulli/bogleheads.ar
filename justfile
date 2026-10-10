@@ -9,3 +9,7 @@ run:
 # Build the static site into dist/.
 build:
     npm run build
+
+# Serve the production build locally (includes dist/404.html).
+preview:
+    npm run preview
