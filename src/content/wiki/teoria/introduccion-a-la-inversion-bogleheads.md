@@ -56,3 +56,5 @@ Dicho de otra forma: se tarda casi el mismo tiempo en juntar los primeros USD 25
 > Aclaración: La rentabilidad esperada en este gráfico corresponde a una inversión 100% en renta variable (más adelante definimos qué es). Estas predicciones se deben tomar con precaución, puesto que no dejan de ser estimaciones, pero pueden ayudar a planificar las expectativas de la rentabilidad de una cartera. Si te interesa, podés hacer tus propias estimaciones con esta [calculadora de interés compuesto](https://www.moneychimp.com/calculator/compound_interest_calculator.htm).
 
 ## Ahorro
+
+> Esta sección todavía se está escribiendo.

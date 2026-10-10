@@ -25,12 +25,10 @@ npm run dev   # local server with live reload
 npm run build # static production build into dist/
 ```
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-- Framework preset: **Astro**
-- Build command: `npm run build`
-- Output directory: `dist`
-- Production domain: `https://bogleheads.ar`
+Static assets from `dist/` via `wrangler deploy` (see `wrangler.jsonc`).
+Production domain: `https://bogleheads.ar`
 
 ## Contributing
 

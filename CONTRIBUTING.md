@@ -46,23 +46,18 @@ committing a change is what updates it — no hooks, no manual step.
 
 ## Style
 
-- Plain, beginner-friendly language. No hype, no promises of returns.
-- Argentina-specific notes (taxes, brokers, currency) go in `Argentina`
-  or inline as asides.
+- Plain, beginner-friendly language.
+- Argentina-specific notes (taxes, brokers, currency) are welcome,
+  either in `Argentina` articles or inline.
 - This site is educational only, never financial advice.
 
-## Editorial policy (golden rule)
-
-- Universal theory is not duplicated here — it is linked. If an article
-  would read the same for any country, don't write it: link to
-  bogleheads.es or bogleheads.org instead (`Teoría` = curated links).
-- Every original article must answer "what changes in Argentina?": local
-  numbers, procedures, taxes, or context — with an effective date, since
-  local info rots fast.
-- Every article ends with a `Referencias` section in APA 7th format, plus
-  `Para profundizar` links. Always attribute; never copy-paste.
-
 ## Local preview
+
+```bash
+just run    # preferred (wraps npm run dev)
+```
+
+Or with npm directly:
 
 ```bash
 npm install
