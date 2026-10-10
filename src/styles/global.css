@@ -397,11 +397,7 @@ a {
     letter-spacing: 6px;
     padding-left: 6px;
     line-height: 1;
-    color: var(--navy);
-}
-
-.cc-badge {
-    vertical-align: middle;
+    color: #ffc400;
 }
 
 .site-footer {
@@ -418,4 +414,9 @@ a {
 
 .site-footer p {
     margin: 0.3rem 0;
+}
+
+.footer-brand {
+    font-size: 1rem;
+    color: #fff;
 }
