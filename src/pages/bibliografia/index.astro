@@ -37,37 +37,42 @@ const books: Book[] = [
     {
       books.map((book) => (
         <li class="book-card">
-          {book.cover ? (
-            <img
-              class="book-cover"
-              src={book.cover}
-              alt={`Portada de ${book.title}`}
-              loading="lazy"
-            />
-          ) : (
-            <div class="book-cover-placeholder" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" />
-                <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
-              </svg>
+          <div class="book-top">
+            {book.cover ? (
+              <img
+                class="book-cover"
+                src={book.cover}
+                alt={`Portada de ${book.title}`}
+                loading="lazy"
+              />
+            ) : (
+              <div class="book-cover-placeholder" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" />
+                  <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
+                </svg>
+              </div>
+            )}
+            <div>
+              <h3>
+                {book.ebookUrl ? (
+                  <a href={book.ebookUrl}>{book.title}</a>
+                ) : (
+                  book.title
+                )}
+              </h3>
+              <p class="book-author">
+                <em>{book.author}</em>
+              </p>
             </div>
-          )}
-          <h3>{book.title}</h3>
-          <p class="book-author">
-            <em>{book.author}</em>
-          </p>
-          {book.ebookUrl && (
-            <p>
-              <a href={book.ebookUrl}>Leer ebook gratis</a>
-            </p>
-          )}
+          </div>
         </li>
       ))
     }

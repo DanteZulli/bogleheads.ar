@@ -18,6 +18,34 @@ const isActive = (href: string) =>
       <img src="/marca/faro-mono-claro.svg" alt="" width="32" height="32" />
       <strong>Bogleheads® Argentina</strong>
     </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menú">
+      <svg
+        class="icon-open"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="M4 7h16" />
+        <path d="M4 12h16" />
+        <path d="M4 17h16" />
+      </svg>
+      <svg
+        class="icon-close"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="M6 6l12 12" />
+        <path d="M18 6L6 18" />
+      </svg>
+    </label>
     <nav class="site-nav" aria-label="Principal">
       {
         links.map((link) => (

@@ -16,6 +16,7 @@ const wiki = defineCollection({
       authors: z.array(z.string()).optional(),
       date: z.coerce.date(),
       updated: z.coerce.date().optional(),
+      order: z.number().int().optional(),
     })
     .superRefine((data, ctx) => {
       if (!data.author && (!data.authors || data.authors.length === 0)) {

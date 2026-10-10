@@ -4,6 +4,7 @@ description: "Primeros pasos para entender la inversión al estilo Bogleheads."
 category: "Teoría"
 authors: ["Dante Zulli"]
 date: 2026-10-10
+order: 1
 ---
 
 ## Invertir

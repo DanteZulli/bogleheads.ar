@@ -67,6 +67,20 @@ export function getAuthors(data: AuthorData): string[] {
 }
 
 /**
+ * Manual ordering for wiki listings: `order` ascending first (so
+ * Introducción can stay on top), then title. Entries without `order`
+ * go last.
+ */
+export function sortWikiEntries<
+  T extends { data: { order?: number; title: string } },
+>(a: T, b: T): number {
+  const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+  const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+  if (orderA !== orderB) return orderA - orderB;
+  return a.data.title.localeCompare(b.data.title, "es");
+}
+
+/**
  * Last-modification date for a wiki entry, resolved at build time as:
  * explicit front matter `updated` → last git commit touching the file →
  * creation `date`.

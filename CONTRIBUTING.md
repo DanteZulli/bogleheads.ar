@@ -24,12 +24,16 @@ description: "Resumen corto para SEO y listados."
 category: "Argentina"
 authors: ["Dante Zulli"]
 date: 2026-10-10
+order: 1
 ---
 
 Contenido en Markdown...
 ```
 
 `author: "Nombre"` (singular) is also accepted; `date` is required.
+`order` is optional: listings sort by `order` ascending first (entries
+without it go last), then by title — use it to pin e.g. Introducción
+on top.
 `updated` is optional: if omitted, the build stamps it automatically from
 the last git commit touching the file (falling back to `date`), so
 committing a change is what updates it — no hooks, no manual step.

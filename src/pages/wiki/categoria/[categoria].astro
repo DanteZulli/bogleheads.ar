@@ -6,6 +6,7 @@ import {
   CATEGORY_BLURB,
   CATEGORY_SLUG,
   articleUrl,
+  sortWikiEntries,
 } from "../../../lib/wiki";
 
 export async function getStaticPaths() {
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
       category,
       items: articles
         .filter((entry) => entry.data.category === category)
-        .sort((a, b) => a.data.title.localeCompare(b.data.title, "es")),
+        .sort(sortWikiEntries),
     },
   }));
 }

@@ -30,7 +30,8 @@ production, Workers serves `dist/404.html` for any miss via
   `title`, `description?`, `category` (Teoría | Argentina | Estudios |
   Recursos | Otro, required), `author` or `authors` (required), `date`
   (required), `updated?` (auto: last git commit touching the file, else
-  `date` — see `resolveUpdated`) — schema in `src/content.config.ts`,
+  `date` — see `resolveUpdated`), `order?` (manual listing order first,
+  then title) — schema in `src/content.config.ts`,
   slugs/helpers in `src/lib/wiki.ts`. No `layout` key:
   `src/pages/wiki/[categoria]/[articulo].astro` renders articles (with
   "Estás acá" breadcrumb + TOC aside);
