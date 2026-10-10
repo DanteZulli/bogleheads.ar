@@ -1,26 +1,40 @@
 ---
 import Base from "../../layouts/Base.astro";
 
-const books = [
+interface Book {
+  title: string;
+  author: string;
+  note: string;
+  tags: string[];
+  // Optional cover image. Drop the file into public/libros/ and reference
+  // it here, e.g. cover: "/libros/bogle-little-book.jpg".
+  cover?: string;
+}
+
+const books: Book[] = [
   {
     title: "The Little Book of Common Sense Investing",
     author: "John C. Bogle",
     note: "El libro fundacional: por qué los fondos indexados de bajo costo superan a la gestión activa.",
+    tags: ["fundacional", "fondos indexados"],
   },
   {
     title: "The Bogleheads' Guide to Investing",
     author: "Larimore, Lindauer y LeBoeuf",
     note: "Guía práctica de la comunidad: ahorro, asignación de activos e impuestos (enfocado en EE.UU.).",
+    tags: ["guía práctica", "comunidad"],
   },
   {
     title: "A Random Walk Down Wall Street",
     author: "Burton Malkiel",
     note: "La evidencia contra el stock picking y el market timing, en lenguaje accesible.",
+    tags: ["evidencia", "mercados"],
   },
   {
     title: "The Psychology of Money",
     author: "Morgan Housel",
     note: "Comportamiento y dinero: hacer pocas cosas bien durante mucho tiempo.",
+    tags: ["conducta", "largo plazo"],
   },
 ];
 ---
@@ -28,19 +42,33 @@ const books = [
 <Base
   title="Bibliografía recomendada"
   description="Libros recomendados sobre inversión pasiva y finanzas personales."
-  editUrl="https://github.com/DanteZulli/bogleheads.ar/edit/main/src/pages/bibliografia/index.astro"
 >
   <h1>Bibliografía recomendada</h1>
   <p>Lecturas para profundizar en la filosofía y su evidencia.</p>
-  <ul class="card-grid">
+  <ul class="book-list">
     {
       books.map((book) => (
-        <li class="card">
-          <h3>{book.title}</h3>
-          <p>
-            <em>{book.author}</em>
-          </p>
-          <p>{book.note}</p>
+        <li class="book-card">
+          {book.cover && (
+            <img
+              class="book-cover"
+              src={book.cover}
+              alt={`Portada de ${book.title}`}
+              loading="lazy"
+            />
+          )}
+          <div class="book-info">
+            <h3>{book.title}</h3>
+            <p class="book-author">
+              <em>{book.author}</em>
+            </p>
+            <p>{book.note}</p>
+            <ul class="tag-list" aria-label="Etiquetas">
+              {book.tags.map((tag) => (
+                <li class="tag">{tag}</li>
+              ))}
+            </ul>
+          </div>
         </li>
       ))
     }

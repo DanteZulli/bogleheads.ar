@@ -5,18 +5,19 @@ educational project. Content is written in Spanish (es-AR).
 
 ## Editing an existing article
 
-Every wiki article has an **"Editar esta página"** link that takes you to
-its Markdown source on GitHub. Propose changes through a pull request.
+Wiki articles live in `src/content/wiki/` as Markdown files. You can edit
+them directly on the GitHub website or clone the repo and propose changes
+through a pull request.
 
 ## Adding a new wiki article
 
-1. Create a `.md` file in `src/pages/wiki/`, e.g.
-   `src/pages/wiki/mi-articulo.md`.
-2. Use this front matter:
+1. Create a `.md` file in `src/content/wiki/`, e.g.
+   `src/content/wiki/mi-articulo.md`.
+2. Use this front matter (no layout needed — collection pages render
+   automatically):
 
 ```markdown
 ---
-layout: ../../layouts/WikiArticle.astro
 title: "Título del artículo"
 description: "Resumen corto para SEO y listados."
 category: "Teoría"

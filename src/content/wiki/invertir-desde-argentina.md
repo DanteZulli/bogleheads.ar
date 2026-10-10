@@ -38,5 +38,5 @@ revisar la normativa vigente o consultar a un contador.
 ## Cómo colaborar
 
 Si tenés experiencia local (comparativas de brokers, guías paso a paso,
-impuestos), este artículo y la sección Argentina te esperan: usá el enlace
-**"Editar esta página"** al pie.
+impuestos), este artículo y la sección Argentina te esperan: proponé cambios
+desde [GitHub](https://github.com/DanteZulli/bogleheads.ar).

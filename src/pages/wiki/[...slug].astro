@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const editUrl = `https://github.com/DanteZulli/bogleheads.ar/edit/main/src/content/wiki/${entry.id}`;
 
 const formatDate = (value?: Date) =>
   value
@@ -31,7 +30,6 @@ const revised = formatDate(entry.data.updated);
 <Base
   title={entry.data.title}
   description={entry.data.description}
-  editUrl={editUrl}
 >
   <article>
     <h1>{entry.data.title}</h1>
@@ -45,9 +43,5 @@ const revised = formatDate(entry.data.updated);
       )
     }
     <Content />
-    <aside class="disclaimer-box">
-      <strong>Nota:</strong> contenido educativo. No es asesoramiento financiero
-      ni una recomendación de inversión.
-    </aside>
   </article>
 </Base>

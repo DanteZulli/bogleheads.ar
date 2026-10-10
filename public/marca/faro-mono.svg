@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 36 48">
+  <!-- Solo la casita del faro, monocromo navy, fondo transparente.
+       Para footer, impresos o tamaños donde el color no rinde. -->
+  <g fill="#003366">
+    <polygon points="22,52 42,52 44,40 40,35 24,35 20,40"/>
+    <polygon points="17,36 47,36 32,23"/>
+    <rect x="30" y="18" width="4" height="5"/>
+    <circle cx="32" cy="16.5" r="2.8"/>
+    <rect x="30" y="45" width="4" height="7"/>
+    <rect x="24.5" y="42" width="3" height="3"/>
+    <rect x="36.5" y="42" width="3" height="3"/>
+  </g>
+</svg>

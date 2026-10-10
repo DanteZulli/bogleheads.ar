@@ -33,8 +33,11 @@ npm run build # static production build into dist/
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Every wiki article links to its
-source file on GitHub ("Editar esta página").
+See [CONTRIBUTING.md](CONTRIBUTING.md). Wiki articles live in
+`src/content/wiki/` as Markdown files.
+
+Brand assets (lighthouse variants) live in `public/marca/`. Book covers go
+in `public/libros/` and are referenced from `src/pages/bibliografia/`.
 
 ## License
 
