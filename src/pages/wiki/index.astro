@@ -22,14 +22,30 @@ const EXTERNAL_LINKS: Record<Category, Array<{ title: string; href: string }>> =
     Otro: [],
   };
 
+// Enlaces internos fuera de /wiki/ (ej. /bibliografia/): también llevan
+// flecha, porque no son artículos de la wiki.
+const INTERNAL_LINKS: Record<Category, Array<{ title: string; href: string }>> =
+  {
+    Teoría: [],
+    Argentina: [],
+    Estudios: [],
+    Recursos: [{ title: "Bibliografía recomendada", href: "/bibliografia/" }],
+    Otro: [],
+  };
+
 const byCategory = CATEGORIES.map((category) => ({
   category,
   items: articles
     .filter((entry) => entry.data.category === category)
     .sort((a, b) => a.data.title.localeCompare(b.data.title, "es")),
   external: EXTERNAL_LINKS[category] ?? [],
-}))
-  .filter((group) => group.items.length > 0 || group.external.length > 0);
+  internal: INTERNAL_LINKS[category] ?? [],
+})).filter(
+  (group) =>
+    group.items.length > 0 ||
+    group.external.length > 0 ||
+    group.internal.length > 0,
+);
 ---
 
 <Base
@@ -178,6 +194,35 @@ const byCategory = CATEGORIES.map((category) => ({
                   <span>
                     {link.title}
                     <span class="external-mark" aria-label="(guía original)">
+                      {" "}↗
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+            {group.internal.map((link) => (
+              <li>
+                <a href={link.href} class="is-external">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                    <path d="M9 13h6" />
+                    <path d="M9 17h6" />
+                  </svg>
+                  <span>
+                    {link.title}
+                    <span
+                      class="external-mark"
+                      aria-label="(sección del sitio)"
+                    >
                       {" "}↗
                     </span>
                   </span>
