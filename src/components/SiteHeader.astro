@@ -14,8 +14,13 @@ const isActive = (href: string) =>
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a class="site-brand" href="/">Bogleheads® Argentina</a>
-    <p class="site-tagline">Inversión pasiva, indexada y periódica</p>
+    <a class="site-brand" href="/">
+      <img src="/favicon.svg" alt="" width="32" height="32" />
+      <span class="site-brand-text">
+        <strong>Bogleheads® Argentina</strong>
+        <small>Inversión pasiva, indexada y periódica</small>
+      </span>
+    </a>
     <nav class="site-nav" aria-label="Principal">
       {
         links.map((link) => (

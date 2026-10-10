@@ -1,13 +1,22 @@
-# bogleheads.ar
+# <img src="public/favicon.svg" width="24" height="24" alt="Faro del Fin del Mundo" /> bogleheads.ar
 
 Unofficial Argentine community site about the Bogleheads® investment
 philosophy: passive, indexed, periodic investing, with local context
 (brokers, taxes, currency) and educational tools.
 
 Static site built with [Astro](https://astro.build). Content lives in
-Markdown under `src/pages/`. Deployed on Cloudflare Pages from `dist/`.
+Markdown under `src/content/`. Deployed on Cloudflare Pages from `dist/`.
 
 ## Commands
+
+With [just](https://github.com/casey/just) (`just help` lists recipes):
+
+```bash
+just run    # local server with live reload
+just build  # static production build into dist/
+```
+
+Or with npm directly:
 
 ```bash
 npm install   # install dependencies
@@ -29,5 +38,5 @@ source file on GitHub ("Editar esta página").
 
 ## License
 
-Site content: CC BY-NC-ND 4.0 (same spirit as bogleheads.es).
+Site content: CC BY-SA 4.0 (same license as Wikipedia).
 Code: MIT (see [LICENSE](LICENSE)).
