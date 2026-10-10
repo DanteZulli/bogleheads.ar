@@ -11,13 +11,9 @@ Markdown under `src/pages/`. Deployed on Cloudflare Pages from `dist/`.
 
 ```bash
 npm install   # install dependencies
-npm run dev   # local server with live reload (search needs a build, see below)
-npm run build # static production build into dist/ + Pagefind search index
+npm run dev   # local server with live reload
+npm run build # static production build into dist/
 ```
-
-Site search is powered by [Pagefind](https://pagefind.app): `npm run build`
-indexes `dist/` automatically. Search works in preview/production, not in
-`npm run dev` (the index doesn't exist until you build).
 
 ## Deploy (Cloudflare Pages)
 
@@ -34,4 +30,4 @@ source file on GitHub ("Editar esta página").
 ## License
 
 Site content: CC BY-NC-ND 4.0 (same spirit as bogleheads.es).
-Code: MIT.
+Code: MIT (see [LICENSE](LICENSE)).
