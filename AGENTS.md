@@ -20,7 +20,8 @@ just build  # astro build
 - No per-article edit links or disclaimers. Keep articles clean: GitHub is
   referenced only in the footer and on Acerca.
 - Palette (navy): `#001F3F` `#003366` `#005B99` `#007BFF` `#A8DADC`.
-- Brand assets: `public/marca/`. Book covers (local files only, no
+- Brand assets: `public/marca/`. Brand mark is the Faro Año Nuevo
+  (Isla Observatorio) lighthouse. Book covers (local files only, no
   hotlinking): `public/libros/`, referenced from the bibliography page.
 - Zero client-side JS in the output (build-to-last). Charts/figures must be
   static SVG or local images — no chart libraries, no CDNs.

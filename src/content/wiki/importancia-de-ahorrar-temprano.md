@@ -1,6 +1,6 @@
 ---
 title: "La importancia de empezar temprano"
-description: "El interés compuesto premia al que empieza antes: ejemplos y una simulación."
+description: "El interés compuesto premia al que empieza antes: por qué el tiempo pesa más que el monto."
 category: "Teoría"
 date: 2026-10-10
 ---

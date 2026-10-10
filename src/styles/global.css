@@ -10,6 +10,7 @@
     --accent: #005b99;
     --bright: #007bff;
     --bright-hover: #0069d9;
+    --celeste: #75aadb;
     --pale: #a8dadc;
     --accent-soft: #dcebec;
     --link: #005b99;
@@ -131,7 +132,7 @@ article,
 .site-nav a[aria-current="page"] {
     color: #fff;
     font-weight: 700;
-    box-shadow: inset 0 -2px 0 var(--bright);
+    box-shadow: inset 0 -2px 0 var(--celeste);
 }
 
 @media (max-width: 44rem) {
@@ -191,6 +192,8 @@ a {
 .hero img {
     max-width: 220px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .hero h1 {
@@ -382,8 +385,17 @@ a {
 
 /* Footer */
 
+.flag-stripe {
+    height: 9px;
+    background: linear-gradient(
+        to bottom,
+        var(--celeste) 0 3px,
+        #fff 3px 6px,
+        var(--celeste) 6px 9px
+    );
+}
+
 .site-footer {
-    border-top: 3px solid var(--bright);
     background: var(--deep);
     color: #c9dbe4;
     font-size: 0.88rem;

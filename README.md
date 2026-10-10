@@ -1,4 +1,4 @@
-# <img src="public/favicon.svg" width="24" height="24" alt="Faro del Fin del Mundo" /> bogleheads.ar
+# <img src="public/favicon.svg" width="24" height="24" alt="Faro Año Nuevo" /> bogleheads.ar
 
 Unofficial Argentine community site about the Bogleheads® investment
 philosophy: passive, indexed, periodic investing, with local context
