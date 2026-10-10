@@ -2,6 +2,7 @@
 title: "Filosofía Bogleheads®"
 description: "Los principios de la inversión pasiva, indexada y periódica según John C. Bogle."
 category: "Teoría"
+authors: ["Dante Zulli"]
 date: 2026-10-10
 ---
 
@@ -43,9 +44,9 @@ Estos principios son universales, pero su aplicación en Argentina tiene
 particularidades: inflación alta, controles de cambio, oferta limitada de
 fondos indexados locales y alternativas como Cedears o ETFs en el exterior.
 Esta wiki las irá cubriendo en la sección
-[Argentina](/wiki/invertir-desde-argentina/).
+[Argentina](/wiki/argentina/invertir-desde-argentina/).
 
 ## Para seguir
 
-- [La importancia de empezar temprano](/wiki/importancia-de-ahorrar-temprano/)
+- [La importancia de empezar temprano](/wiki/teoria/importancia-de-ahorrar-temprano/)
 - [Bibliografía recomendada](/bibliografia/)

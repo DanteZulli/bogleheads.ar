@@ -2,6 +2,7 @@
 title: "Invertir desde Argentina"
 description: "Particularidades locales: moneda, inflación, instrumentos disponibles y fiscalidad."
 category: "Argentina"
+authors: ["Dante Zulli"]
 date: 2026-10-10
 ---
 

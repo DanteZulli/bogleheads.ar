@@ -11,8 +11,9 @@ through a pull request.
 
 ## Adding a new wiki article
 
-1. Create a `.md` file in `src/content/wiki/`, e.g.
-   `src/content/wiki/mi-articulo.md`.
+1. Create a `.md` file in its category folder, e.g.
+   `src/content/wiki/argentina/mi-articulo.md` (`teoria`, `argentina`,
+   `estudios`, `recursos`, `otro`).
 2. Use this front matter (no layout needed — collection pages render
    automatically):
 
@@ -20,17 +21,24 @@ through a pull request.
 ---
 title: "Título del artículo"
 description: "Resumen corto para SEO y listados."
-category: "Teoría"
+category: "Argentina"
+authors: ["Dante Zulli"]
 date: 2026-10-10
 ---
 
 Contenido en Markdown...
 ```
 
+`author: "Nombre"` (singular) is also accepted; `date` is required.
+`updated` is optional: if omitted, the build stamps it automatically from
+the last git commit touching the file (falling back to `date`), so
+committing a change is what updates it — no hooks, no manual step.
+
 3. Available categories: `Teoría`, `Argentina`, `Estudios`, `Recursos`,
-   `Otro`.
-4. The article appears automatically on `/wiki/` (grouped by category,
-   plus the 5 most recent by `date`).
+   `Otro` (slugs: `teoria`, `argentina`, `estudios`, `recursos`, `otro`).
+4. The article appears automatically on `/wiki/` (category boxes), on its
+   category page `/wiki/categoria/<slug>/`, and at
+   `/wiki/<slug-categoria>/<slug-articulo>/` with breadcrumb and TOC.
 
 ## Style
 

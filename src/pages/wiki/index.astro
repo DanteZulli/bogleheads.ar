@@ -1,25 +1,35 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import {
+  CATEGORIES,
+  articleUrl,
+  categoryUrl,
+  type Category,
+} from "../../lib/wiki";
 
 const articles = await getCollection("wiki");
 
-const CATEGORIES = ["Teoría", "Argentina", "Estudios", "Recursos", "Otro"] as const;
-
-const slugOf = (id: string) => id.replace(/\.md$/, "");
+// Enlaces a guías originales: cuando la guía de Bogleheads® España o EE.UU.
+// ya cubre el tema, enlazamos la fuente en vez de duplicarla.
+// Agregá entradas acá con { title, href } por categoría.
+const EXTERNAL_LINKS: Record<Category, Array<{ title: string; href: string }>> =
+  {
+    Teoría: [],
+    Argentina: [],
+    Estudios: [],
+    Recursos: [],
+    Otro: [],
+  };
 
 const byCategory = CATEGORIES.map((category) => ({
   category,
   items: articles
     .filter((entry) => entry.data.category === category)
     .sort((a, b) => a.data.title.localeCompare(b.data.title, "es")),
-})).filter((group) => group.items.length > 0);
-
-const recent = [...articles]
-  .sort(
-    (a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0),
-  )
-  .slice(0, 5);
+  external: EXTERNAL_LINKS[category] ?? [],
+}))
+  .filter((group) => group.items.length > 0 || group.external.length > 0);
 ---
 
 <Base
@@ -30,37 +40,153 @@ const recent = [...articles]
   <p class="wiki-search-note">
     Artículos educativos sobre inversión pasiva, indexada y periódica, con
     contexto argentino. Para corregir o ampliar un artículo, proponé cambios
-    desde <a href="https://github.com/DanteZulli/bogleheads.ar">GitHub</a>.
+    desde{" "}
+    <a href="https://github.com/DanteZulli/bogleheads.ar">GitHub</a>.
+  </p>
+  <p class="wiki-search-note">
+    No todos los enlaces son artículos propios: cuando la guía original ya
+    cubre el tema de forma suficiente, enlazamos directamente a esa fuente en
+    vez de duplicarla.
   </p>
 
-  {
-    byCategory.map((group) => (
-      <section class="wiki-category">
-        <h2>{group.category}</h2>
-        <ul class="article-list">
-          {group.items.map((entry) => (
-            <li>
-              <a href={`/wiki/${slugOf(entry.id)}/`}>{entry.data.title}</a>
-              {entry.data.description && <p>{entry.data.description}</p>}
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))
-  }
-
-  {
-    recent.length > 0 && (
-      <section class="wiki-category">
-        <h2>Artículos recientes</h2>
-        <ul class="article-list">
-          {recent.map((entry) => (
-            <li>
-              <a href={`/wiki/${slugOf(entry.id)}/`}>{entry.data.title}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )
-  }
+  <div class="wiki-grid">
+    {
+      byCategory.map((group) => (
+        <section class="wiki-card" aria-label={group.category}>
+          <div class="wiki-card-header">
+            {group.category === "Teoría" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z" />
+                <path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z" />
+              </svg>
+            )}
+            {group.category === "Argentina" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            )}
+            {group.category === "Estudios" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="8" y="2" width="8" height="4" rx="1" />
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <path d="M9 12h6" />
+                <path d="M9 16h6" />
+              </svg>
+            )}
+            {group.category === "Recursos" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" />
+                <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
+                <path d="M9 7h7" />
+                <path d="M9 11h5" />
+              </svg>
+            )}
+            {group.category === "Otro" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <path d="m4.9 4.9 4.2 4.2" />
+                <path d="m14.9 14.9 4.2 4.2" />
+                <path d="m19.1 4.9-4.2 4.2" />
+                <path d="m9.1 14.9-4.2 4.2" />
+              </svg>
+            )}
+            <h2>
+              <a href={categoryUrl(group.category)}>{group.category}</a>
+            </h2>
+          </div>
+          <ul>
+            {group.items.map((entry) => (
+              <li>
+                <a href={articleUrl(group.category, entry.id)}>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                    <path d="M9 13h6" />
+                    <path d="M9 17h6" />
+                  </svg>
+                  <span>{entry.data.title}</span>
+                </a>
+              </li>
+            ))}
+            {group.external.map((link) => (
+              <li>
+                <a href={link.href} class="is-external">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                    <path d="M9 13h6" />
+                    <path d="M9 17h6" />
+                  </svg>
+                  <span>
+                    {link.title}
+                    <span class="external-mark" aria-label="(guía original)">
+                      {" "}↗
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
 </Base>

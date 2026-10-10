@@ -25,13 +25,20 @@ production, Workers serves `dist/404.html` for any miss via
 
 ## Content
 
-- Wiki articles: `src/content/wiki/*.md` with front matter `title`,
-  `description?`, `category` (Teoría | Argentina | Estudios | Recursos |
-  Otro), `date?`, `updated?` — schema in `src/content.config.ts`. No
-  `layout` key: `src/pages/wiki/[...slug].astro` renders the collection.
-- `/wiki/` index groups by category plus 5 most recent by `date`;
-  `src/pages/llms.txt.js` auto-generates `/llms.txt` from all articles —
-  no manual step when adding articles.
+- Wiki articles: `src/content/wiki/<slug-categoria>/*.md`
+  (`teoria`, `argentina`, `estudios`, `recursos`, `otro`) with front matter
+  `title`, `description?`, `category` (Teoría | Argentina | Estudios |
+  Recursos | Otro, required), `author` or `authors` (required), `date`
+  (required), `updated?` (auto: last git commit touching the file, else
+  `date` — see `resolveUpdated`) — schema in `src/content.config.ts`,
+  slugs/helpers in `src/lib/wiki.ts`. No `layout` key:
+  `src/pages/wiki/[categoria]/[articulo].astro` renders articles (with
+  "Estás acá" breadcrumb + TOC aside);
+  `src/pages/wiki/categoria/[categoria].astro` renders one category page.
+- `/wiki/` index renders category boxes linking to both; category pages
+  link back via "Todos los temas"; `src/pages/llms.txt.js`
+  auto-generates `/llms.txt` from all articles — no manual step when
+  adding articles.
 - No per-article edit links or disclaimers. GitHub/contribution pointers
   live only in the footer, the `/wiki/` note, and Acerca; the unofficial /
   not-financial-advice banner lives in `Base.astro`. Don't duplicate them
@@ -46,7 +53,8 @@ production, Workers serves `dist/404.html` for any miss via
 ## Site conventions
 
 - `trailingSlash: 'always'` (`astro.config.mjs`): all internal links end
-  in `/` (`/wiki/`, `/acerca/`, `/wiki/<slug>/`).
+  in `/` (`/wiki/`, `/acerca/`, `/wiki/<slug-categoria>/<slug-articulo>/`,
+  `/wiki/categoria/<slug-categoria>/`).
 - Zero client-side JS in the output (only a static JSON-LD `<script>`).
   Charts/figures must be static SVG or local images — no chart libraries,
   no CDNs.

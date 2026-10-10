@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import {
+  CATEGORIES,
+  CATEGORY_BLURB,
+  CATEGORY_SLUG,
+  articleUrl,
+} from "../../../lib/wiki";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("wiki");
+  return CATEGORIES.map((category) => ({
+    params: { categoria: CATEGORY_SLUG[category] },
+    props: {
+      category,
+      items: articles
+        .filter((entry) => entry.data.category === category)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title, "es")),
+    },
+  }));
+}
+
+const { category, items } = Astro.props;
+---
+
+<Base
+  title={category}
+  description={`${category}: artículos de la wiki. ${CATEGORY_BLURB[category]}`}
+>
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <span>Estás acá:</span>
+    <ol>
+      <li>
+        <a href="/wiki/">Todos los temas</a>
+      </li>
+      <li aria-current="page">{category}</li>
+    </ol>
+  </nav>
+
+  <h1>{category}</h1>
+  <p class="wiki-search-note">{CATEGORY_BLURB[category]}</p>
+
+  {
+    items.length > 0 ? (
+      <ul class="category-list">
+        {items.map((entry) => (
+          <li>
+            <a href={articleUrl(category, entry.id)}>{entry.data.title}</a>
+            {entry.data.description && <p>{entry.data.description}</p>}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="wiki-search-note">
+        Todavía no hay artículos en esta categoría.
+      </p>
+    )
+  }
+</Base>
