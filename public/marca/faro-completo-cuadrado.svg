@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Faro San Juan de Salvamento</title>
   <!-- Faro San Juan de Salvamento, variante cuadrada sin bordes redondeados -->
   <rect width="64" height="64" fill="#001F3F"/>
   <polygon points="32,17 8,11 8,23" fill="#007BFF" opacity="0.25"/>

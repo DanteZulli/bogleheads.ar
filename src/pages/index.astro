@@ -3,8 +3,18 @@ import Base from "../layouts/Base.astro";
 ---
 
 <Base
-  title="Bienvenidos a Bogleheads Argentina"
+  title="Bogleheads® Argentina"
   description="Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina: inversión pasiva, indexada y periódica."
+  exactTitle
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Bogleheads® Argentina",
+    url: "https://bogleheads.ar/",
+    description:
+      "Comunidad no oficial sobre la filosofía de inversión Bogleheads desde Argentina.",
+    inLanguage: "es-AR",
+  }}
 >
   <section class="hero">
     <img

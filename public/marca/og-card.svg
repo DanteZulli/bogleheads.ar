@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <title>Bogleheads® Argentina — Faro San Juan de Salvamento</title>
+  <!-- Source for public/marca/og-card.png (rasterized with rsvg-convert).
+       Static social card: no build tooling, no external assets. -->
+  <rect width="1200" height="630" fill="#001F3F"/>
+  <g transform="translate(472,36) scale(4)">
+    <polygon points="32,17 8,11 8,23" fill="#007BFF" opacity="0.25"/>
+    <polygon points="32,17 56,11 56,23" fill="#007BFF" opacity="0.25"/>
+    <rect y="50" width="64" height="14" fill="#005B99"/>
+    <path d="M0,50 Q8,46 16,50 T32,50 T48,50 T64,50 V54 H0 Z" fill="#007BFF" opacity="0.6"/>
+    <polygon points="0,64 0,44 24,54 20,64" fill="#003366"/>
+    <polygon points="22,52 42,52 44,40 40,35 24,35 20,40" fill="#F4F8FB"/>
+    <polygon points="17,36 47,36 32,23" fill="#A8DADC"/>
+    <rect x="30" y="18" width="4" height="5" fill="#003366"/>
+    <circle cx="32" cy="16.5" r="2.8" fill="#003366"/>
+    <circle cx="32" cy="16.5" r="1.1" fill="#A8DADC"/>
+    <line x1="32" y1="13.7" x2="32" y2="10.5" stroke="#A8DADC" stroke-width="1"/>
+    <rect x="30" y="45" width="4" height="7" fill="#003366"/>
+    <rect x="24.5" y="42" width="3" height="3" fill="#003366"/>
+    <rect x="36.5" y="42" width="3" height="3" fill="#003366"/>
+  </g>
+  <text x="600" y="400" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="64" font-weight="bold" fill="#F4F8FB">Bogleheads® Argentina</text>
+  <text x="600" y="464" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#A8DADC">Inversión pasiva, indexada y periódica</text>
+  <text x="600" y="524" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#007BFF">bogleheads.ar</text>
+</svg>

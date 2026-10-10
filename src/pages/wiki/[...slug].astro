@@ -25,11 +25,28 @@ const formatDate = (value?: Date) =>
 
 const published = formatDate(entry.data.date);
 const revised = formatDate(entry.data.updated);
+
+const toISO = (value?: Date) => value?.toISOString().split("T")[0];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: entry.data.title,
+  description: entry.data.description,
+  inLanguage: "es-AR",
+  author: { "@type": "Person", name: "Dante Zulli" },
+  ...(entry.data.date && { datePublished: toISO(entry.data.date) }),
+  ...(entry.data.updated && { dateModified: toISO(entry.data.updated) }),
+};
 ---
 
 <Base
   title={entry.data.title}
   description={entry.data.description}
+  ogType="article"
+  publishedTime={toISO(entry.data.date)}
+  modifiedTime={toISO(entry.data.updated)}
+  jsonLd={jsonLd}
 >
   <article>
     <h1>{entry.data.title}</h1>

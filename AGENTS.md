@@ -24,6 +24,10 @@ just build  # astro build
   hotlinking): `public/libros/`, referenced from the bibliography page.
 - Zero client-side JS in the output (build-to-last). Charts/figures must be
   static SVG or local images — no chart libraries, no CDNs.
+- SEO: `@astrojs/sitemap` (build-time only), `src/pages/llms.txt.js`
+  auto-generates `/llms.txt` from the wiki, OG/Twitter/JSON-LD live in
+  `src/layouts/Base.astro`, social card is the committed
+  `public/marca/og-card.png` (source: `og-card.svg`).
 
 ## Astro gotcha: whitespace around links
 

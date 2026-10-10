@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://bogleheads.ar/sitemap-index.xml

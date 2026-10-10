@@ -1,6 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="14 8 36 48">
+  <title>Faro San Juan de Salvamento</title>
   <!-- Solo la casita del faro, monocromo claro, fondo transparente.
        Para usar sobre fondos oscuros (header navy). -->
+  <polygon points="32,17 8,11 8,23" fill="#A8DADC" opacity="0.30"/>
+  <polygon points="32,17 56,11 56,23" fill="#A8DADC" opacity="0.30"/>
   <g fill="#F4F8FB">
     <polygon points="22,52 42,52 44,40 40,35 24,35 20,40"/>
     <polygon points="17,36 47,36 32,23"/>
