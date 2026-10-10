@@ -87,20 +87,10 @@ article,
     height: 2rem;
 }
 
-.site-brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.25;
-}
-
-.site-brand-text strong {
+.site-brand strong {
     font-size: 1.15rem;
     letter-spacing: 0.01em;
-}
-
-.site-brand-text small {
-    color: var(--pale);
-    font-size: 0.78rem;
+    line-height: 1.2;
 }
 
 .site-brand:hover .site-brand-text strong {
