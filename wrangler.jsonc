@@ -1,0 +1,8 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/wrangler/config-schema.json",
+  "name": "bogleheads-ar",
+  "compatibility_date": "2026-10-10",
+  "assets": {
+    "directory": "./dist"
+  }
+}

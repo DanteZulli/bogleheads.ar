@@ -5,7 +5,8 @@ philosophy: passive, indexed, periodic investing, with local context
 (brokers, taxes, currency) and educational tools.
 
 Static site built with [Astro](https://astro.build). Content lives in
-Markdown under `src/content/`. Deployed on Cloudflare Pages from `dist/`.
+Markdown under `src/content/`. Deployed on Cloudflare Workers Static Assets
+from `dist/` (see `wrangler.jsonc`).
 
 ## Commands
 
