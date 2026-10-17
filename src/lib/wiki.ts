@@ -96,7 +96,7 @@ export function resolveUpdated(
 ): Date {
   if (updated) return updated;
   try {
-    const file = join(process.cwd(), "src/content/wiki", id);
+    const file = join(process.cwd(), "src/content/wiki", `${id}.md`);
     const out = execFileSync(
       "git",
       ["log", "-1", "--format=%cI", "--", file],
