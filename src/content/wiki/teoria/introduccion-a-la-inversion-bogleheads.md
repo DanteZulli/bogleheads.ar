@@ -45,16 +45,43 @@ Este efecto "bola de nieve" es lo que comunmente llamamos _interés compuesto_.
 
 ![Ahorro vs rendimientos camino al millón: USD 10.000 por año al 7% anual](/wiki/ahorro-vs-rendimientos.png)
 
-_Fuente: [Four Pillar Freedom](https://fourpillarfreedom.com/the-biggest-misunderstanding-about-compound-interest/)._
-
 Miremos este ejemplo concreto: aportando USD 10.000 por año (equivalente a USD ~833 al mes) al 7% anual (cerca de la media histórica del S&P 500), se llega al millón en unos 31 años. Pero lo interesante no es el monto final, sino de qué está compuesto: al llegar a los USD 100.000, el 78% lo aportamos nosotros y solo el 22% son rendimientos.
 
 Al pasar de USD 100.000 a USD 200.000, el 51% (USD 51.000) vino de tus aportes y el 49% (USD 49.000) de los rendimientos: a medida que el capital crece, cada vez trabaja más por vos.
 
 Dicho de otra forma: se tarda casi el mismo tiempo en juntar los primeros USD 250.000 (unos 15 años) que en pasar de ahí al millón (unos 16 años más), aportando siempre lo mismo!
 
-> Aclaración: La rentabilidad esperada en este gráfico corresponde a una inversión 100% en renta variable (más adelante definimos qué es). Estas predicciones se deben tomar con precaución, puesto que no dejan de ser estimaciones, pero pueden ayudar a planificar las expectativas de la rentabilidad de una cartera. Si te interesa, podés hacer tus propias estimaciones con esta [calculadora de interés compuesto](https://www.moneychimp.com/calculator/compound_interest_calculator.htm).
+> Aclaración: La rentabilidad esperada en este gráfico corresponde a una inversión 100% en renta variable (más adelante definimos qué es). Estas predicciones se deben tomar con precaución, puesto que no dejan de ser estimaciones, pero pueden ayudar a planificar las expectativas de la rentabilidad de una cartera. Si te interesa, podés hacer tus propias estimaciones con esta [calculadora de interés compuesto](http://www.moneychimp.com/calculator/compound_interest_calculator.htm).
 
-## Ahorro
+## Ahorro e independencia financiera
 
-> Esta sección todavía se está escribiendo.
+Hablar de ahorro en Argentina es complejo. Son pocas las personas que pueden permitirse separar parte de sus ingresos para destinarlos a “su futuro” y, entre quienes sí pueden, muchas sienten que su capacidad de ahorro no es “lo suficientemente buena” como para que valga la pena, así que deciden gastarlo hoy.
+
+Si bien considero que la disciplina del ahorro es un pilar fundamental de esta filosofía, también tengo que reconocer que los objetivos y escenarios planteados varían mucho entre países “desarrollados” y “subdesarrollados”.
+
+La mayoría de las guías o foros Boglehead definen un concepto llamado “Independencia Financiera”, con el que hacen referencia a poder retirarse y vivir de las rentas que generen nuestras inversiones. Sin embargo, para este y otros artículos de este blog, vamos a tomar la redefinición del concepto que hace Juan Huerta De Soto en **La guía Boglehead de inversión**:
+
+> _"El objetivo es que podamos alcanzar la independencia financiera en el futuro, es decir, la capacidad económica suficiente que nos permita realizar nuestras metas en la vida."_
+
+Tomando esta nueva reinterpretación, la independencia financiera deja de ser ese enorme objetivo que parece inalcanzable y pasa a ser algo con lo que cada uno puede soñar desde su contexto específico. Puede tratarse de un auto, un departamento, un terreno, un viaje, empezar un negocio, etc. La independencia financiera es que el dinero no se vuelva un impedimento para los objetivos que tengas por cumplir y, para eso, se necesita la disciplina del ahorro.
+
+En resumen, ahorrar es una decisión sostenida en el tiempo: es cuestión de tratar de separar lo que se pueda, cuánto se pueda, sin juzgarnos ni presionarnos, y siguiendo el resto de los principios que esta filosofía detalla (y que vamos a ir viendo a continuación). La independencia financiera no empieza con montos gigantescos ni actos heroicos, sino con la decisión de darle un destino claro a lo que hoy ya tenés.
+
+## Tipos de inversión
+
+De entre todos los tipos de inversión que existen, acá nos vamos a centrar en la inversión a largo plazo, y en sus 2 clases de activos principales; las acciones y los bonos.
+
+> _Esta sección todavía se está escribiendo..._
+
+## Agradecimientos
+
+Este artículo es una adaptación "argentinizada" de [«Introducción a la inversión Bogleheads»](https://bogleheads.es/wiki/introduccion-a-la-inversion-bogleheads), del wiki de la comunidad Bogleheads en español, cuya estructura y contenido sirvieron de base.
+
+## Referencias
+
+- Bobbitt, Z. (2020, 29 de julio). *The biggest misunderstanding about compound interest*. Four Pillar Freedom. https://fourpillarfreedom.com/the-biggest-misunderstanding-about-compound-interest/
+
+- BogleBossB. (2020, 21 de diciembre). *Introducción a la inversión Bogleheads*. Wiki Bogleheads. https://bogleheads.es/wiki/introduccion-a-la-inversion-bogleheads
+
+- Lindauer, M., Larimore, T., & LeBoeuf, M. (2020). *La guía Boglehead de inversión* (Prólogo de John C. Bogle; Traducción de Carla López Fatur). Ediciones Deusto. (Obra original publicada en 2006 como *The Bogleheads' Guide to Investing*).
+

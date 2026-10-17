@@ -29,5 +29,8 @@ via `wrangler deploy` (config in `wrangler.jsonc`).
 ## Conventions
 
 - `trailingSlash: 'always'`: all internal links end in `/`.
+- References sections (`## Referencias`) use APA 7 style, in Spanish:
+  alphabetical order, `Autor, A., Autor, B. (año). *Título*. Editorial. URL`,
+  and `(s. f.)` instead of `(n.d.)` for undated sources.
 - YAML parses `date: 2026-10-10` as a Date, so the schema uses
   `z.coerce.date()`. Format with `timeZone: "UTC"`.
